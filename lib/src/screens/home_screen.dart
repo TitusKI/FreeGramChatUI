@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:freegram/widgets/favoritecontact.dart';
 import '../../widgets/chatstate.dart';
+import '../../widgets/recentchats.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
@@ -38,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body:  Column(
           children: [
-            ChatState(),
+            const ChatState(),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
@@ -48,20 +50,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     topRight: Radius.circular(30.0)
                   ),
               ),
-                child: Column(
+                child: const Column(
                   children: [
-                    Row(
-                      children: [
-                        const Text('Favorite Contacts'),
-                        IconButton(onPressed: (){},
-                            icon: const Icon(Icons.more_horiz),
-                        )
+                      FavoriteContact(),
+                      RecentChat(),
                       ],
                     )
-                  ],
+
                 ),
               ),
-            ),
+
 
           ],
         ),
